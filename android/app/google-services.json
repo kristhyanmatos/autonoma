@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "103784877506",
+    "project_id": "autonoma-29e17",
+    "storage_bucket": "autonoma-29e17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103784877506:android:f5bd594c4c97e03578da5b",
+        "android_client_info": {
+          "package_name": "com.example.autonoma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103784877506-ip24nelmdfb2d9imtg2knaotqj3714ld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.autonoma",
+            "certificate_hash": "aa9dffa63b1ef514851d2a1a2ccf3fd0f13e8a39"
+          }
+        },
+        {
+          "client_id": "103784877506-5f118q4nmajqhtb3jv991pbav0kiltbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc8S67TRjaEwnfJOnyhqDHX6Rv3vjYf8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103784877506-2vd55pc9tmvqa2909j8nrfc3ja2lhrk0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103784877506-943205sfihp72nco5q8kfa1vln9avna3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.autonoma.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103784877506:android:56d5d095380746b878da5b",
+        "android_client_info": {
+          "package_name": "com.kris.autonoma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103784877506-5f118q4nmajqhtb3jv991pbav0kiltbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc8S67TRjaEwnfJOnyhqDHX6Rv3vjYf8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103784877506-2vd55pc9tmvqa2909j8nrfc3ja2lhrk0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103784877506-943205sfihp72nco5q8kfa1vln9avna3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.autonoma.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,35 @@
+name: autonoma
+description: App para buscar as melhores pessoas autônomas prestadoras de serviços da sua região
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_modular: ^6.3.1
+  flutter_triple: ^3.0.0
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.9.0
+  google_sign_in: ^6.1.5
+  sign_in_with_apple: ^5.0.0
+  cloud_firestore: ^4.9.1
+  dartz: ^0.10.1
+  flutter_chat_ui: ^1.6.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
