@@ -12,6 +12,33 @@ class AuthDatasource implements IAuthDatasource {
   AuthDatasource(this._auth, this._googleSignIn);
 
   @override
+  Map<String, dynamic> currentUser() {
+    try {
+      final currentUser = _auth.currentUser;
+      if (currentUser == null) {
+        throw Failure(
+          "Usuário não autenticado!",
+          label: "AuthDatasource-currentUser",
+        );
+      } else {
+        return {
+          "uid": currentUser.uid,
+          "name": currentUser.displayName,
+          "photoUrl": currentUser.photoURL,
+          "email": currentUser.email,
+        };
+      }
+    } on FirebaseAuthException catch (e, stackTrace) {
+      throw Failure(
+        e.message ?? stackTrace.toString(),
+        exception: e,
+        label: "AuthDatasource-currentUser",
+        stackTrace: stackTrace,
+      );
+    }
+  }
+
+  @override
   Future loginGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -79,6 +106,20 @@ class AuthDatasource implements IAuthDatasource {
         e.message!,
         exception: e,
         label: "AuthDatasource-logout",
+        stackTrace: stackTrace,
+      );
+    }
+  }
+
+  @override
+  Future<void> updatePhotoURL(String photoUrl) async {
+    try {
+      await _auth.currentUser?.updatePhotoURL(photoUrl);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      throw Failure(
+        e.message!,
+        exception: e,
+        label: "AuthDatasource-updatePhotoURL",
         stackTrace: stackTrace,
       );
     }

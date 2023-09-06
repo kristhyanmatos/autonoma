@@ -28,6 +28,10 @@ class _LoginPageState extends State<LoginPage> {
               child: const Text("Apple"),
               onPressed: () => store.loginApple(),
             ),
+            FilledButton(
+              onPressed: () => Modular.to.pushNamed('/welcome_nomo'),
+              child: const Text('Juntar-se ao NoMo'),
+            ),
           ],
         ),
       ),
