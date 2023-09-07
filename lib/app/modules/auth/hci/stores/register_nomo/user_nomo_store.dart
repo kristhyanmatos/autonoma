@@ -18,15 +18,24 @@ class UserNomoStore extends Store<User> {
       'nomo/photoProfile',
     );
     await response.fold(
-      (l) async => null,
+      (l) async => setError(l.message),
       (_) async {
         final response = await _nomoRepository.preCreate(state.name);
         response.fold(
-          (l) => null,
-          (r) => Modular.to.pushNamed('/category_nomo'),
+          (l) => setError(l.message),
+          (r) => {setLoading(false), Modular.to.pushNamed('/category_nomo')},
         );
       },
     );
-    setLoading(false);
+  }
+
+  setUserName(String value) {
+    final newState = state.copyWith(name: value);
+    update(newState);
+  }
+
+  setUserPhotoUrl(String value) {
+    final newState = state.copyWith(urlPhoto: value);
+    update(newState);
   }
 }
