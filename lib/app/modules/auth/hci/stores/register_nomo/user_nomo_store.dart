@@ -1,3 +1,4 @@
+import 'package:autonoma/app/modules/core/messages/message_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
@@ -18,11 +19,17 @@ class UserNomoStore extends Store<User> {
       'nomo/photoProfile',
     );
     await response.fold(
-      (l) async => setError(l.message),
+      (l) async => {
+        showMessage(l.message),
+        setLoading(false),
+      },
       (_) async {
         final response = await _nomoRepository.preCreate(state.name);
         response.fold(
-          (l) => setError(l.message),
+          (l) => {
+            showMessage(l.message),
+            setLoading(false),
+          },
           (r) => {setLoading(false), Modular.to.pushNamed('/category_nomo')},
         );
       },
