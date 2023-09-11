@@ -54,8 +54,8 @@ class AuthModule extends Module {
 
   @override
   void routes(RouteManager r) {
-    r.child('/', child: (context) => const LoginPage());
-    r.child('/category_nomo', child: (context) => const CategoryNomoPage());
+    // r.child('/', child: (context) => const LoginPage());
+    r.child('/', child: (context) => const CategoryNomoPage());
     r.child('/completed_nomo', child: (context) => const CompletedNomoPage());
     r.child('/user_nomo', child: (context) => const UserNomoPage());
     r.child('/welcome_nomo', child: (context) => const WelcomeNomoPage());

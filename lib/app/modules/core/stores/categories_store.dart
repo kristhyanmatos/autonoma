@@ -8,7 +8,9 @@ class CategoriesStore extends Store<List<Category>> {
   CategoriesStore(this._service) : super([]);
 
   Future getAllCategories() async {
+    setLoading(true);
     final response = await _service.gettAllCategories();
     response.fold((l) => null, (r) => update(r));
+    setLoading(false);
   }
 }

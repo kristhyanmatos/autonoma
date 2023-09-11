@@ -5,11 +5,10 @@ class Nomo {
   List<Category> categories;
   Localization localization;
 
-  Nomo({
-    required this.uid,
-    required this.categories,
-    required this.localization,
-  });
+  Nomo(
+      {required this.uid,
+      required this.categories,
+      required this.localization});
 
   factory Nomo.init() {
     return Nomo(
@@ -25,6 +24,14 @@ class Nomo {
       'categories': categories.map((e) => e.toJson()).toList(),
       'localization': localization.toJson(),
     };
+  }
+
+  Nomo copyWith(
+      {String? uid, List<Category>? categories, Localization? localization}) {
+    return Nomo(
+        uid: uid ?? this.uid,
+        categories: categories ?? this.categories,
+        localization: localization ?? this.localization);
   }
 }
 

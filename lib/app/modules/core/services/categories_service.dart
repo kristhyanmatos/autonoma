@@ -16,7 +16,8 @@ class CategoriesService implements ICategoriesService {
   @override
   Future<Either<CoreFailure, List<Category>>> gettAllCategories() async {
     try {
-      final data = await _firestore.collection('categories').get();
+      final data =
+          await _firestore.collection('categories').orderBy('name').get();
       List<Category> list = data.docs.map((item) {
         return Category(id: item.id, name: item.data()['name']);
       }).toList();

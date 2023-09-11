@@ -1,3 +1,4 @@
+import 'package:autonoma/app/modules/core/domain/entities/category.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
@@ -11,5 +12,10 @@ class CategoryNomoStore extends Store<Nomo> {
   Future<void> create() async {
     final response = await _repository.create(state);
     response.fold((l) => null, (r) => Modular.to.pushNamed('/completed_nomo'));
+  }
+
+  void setCategories(List<Category> value) {
+    final newState = state.copyWith(categories: value);
+    update(newState);
   }
 }
